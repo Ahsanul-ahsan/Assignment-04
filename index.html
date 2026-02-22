@@ -40,7 +40,7 @@
             </div>
             <div class="bg-[#FFFFFF] rounded-lg  w-[320px] h-[75px] p-5">
                 <p class="text-[#002C5C] text-[12px]">Rejected</p>
-                <p id="rejectCount">0</p>
+                <p id="rejectCount" class="text-red-500 font-bold text-[16px]">0</p>
             </div>
         </div>
     </header>
@@ -49,14 +49,23 @@
     <main class="w-[80%] mx-auto pt-10">
         <!-- filter Button  -->
         <div>
-            <button id="all-filter-btn" class="btn btn-soft bg-black text-white">All</button>
-            <button id="interview-filter-btn" class="btn btn-soft  bg-gray-300">Interview</button>
-            <button id="rejected-filter-btn" class="btn btn-soft  bg-gray-300">Rejected</button>
+            <button onclick="toggleStyle ('all-filter-btn')" id="all-filter-btn"
+                class="btn btn-soft bg-blue-700 text-white">All</button>
+            <button onclick="toggleStyle ('interview-filter-btn')" id="interview-filter-btn"
+                class="btn btn-soft  bg-gray-300">Interview</button>
+            <button onclick="toggleStyle ('rejected-filter-btn')" id="rejected-filter-btn"
+                class="btn btn-soft  bg-gray-300">Rejected</button>
         </div>
+        <!-- after filtered card  -->
+        <section id="filtered-section" class="hidden">
+
+        </section>
+
+        <!-- all card section  -->
         <section id="allcard" class="pt-8 space-y-4">
             <!-- card no 1 -->
             <div class="flex justify-between  bg-[#FFFFFF] rounded-[5px] ">
-                <div class="space-y-4 p-5 rounded-[8px]">
+                <div class="space-y-4 p-5 rounded-sm">
                     <div>
                         <p class="cardName text-[#002C5C] text-[14px] font-bold">Mobile First Corp</p>
                         <p class="designation text-[#323B49] text-[12px]">React Native Developer</p>
@@ -66,7 +75,7 @@
                     </div>
                     <div>
                         <button
-                            class="notApplied bg-[#EEF4FF] rounded-[5px] w-[100px] h-[35px] text-[#002C5C] text-[14px]">Not
+                            class="notApplied bg-[#EEF4FF] rounded-sm w-[100px] h-[35px] text-[#002C5C] text-[14px]">Not
                             Applied</button>
                         <p class="details text-[#323B49] text-[12px]">Build cross-platform mobile applications using
                             React Native. Work on products used by millions of users worldwide.</p>
@@ -80,7 +89,7 @@
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF]"><i
+                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
                                 class="fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
@@ -89,7 +98,7 @@
             </div>
             <!-- card no 2 -->
             <div class="flex justify-between  bg-[#FFFFFF] rounded-[5px] ">
-                <div class="space-y-4 p-5 rounded-[8px]">
+                <div class="space-y-4 p-5 rounded-sm">
                     <div>
                         <p class="cardName  text-[#002C5C] text-[14px] font-bold">WebFlow Agency</p>
                         <p class="designation text-[#323B49] text-[12px]">Web Designer & Developer</p>
@@ -100,7 +109,7 @@
                     </div>
                     <div>
                         <button
-                            class="notApplied bg-[#EEF4FF] rounded-[5px] w-[100px] h-[35px] text-[#002C5C] text-[14px]">Not
+                            class="notApplied bg-[#EEF4FF] rounded-sm w-[100px] h-[35px] text-[#002C5C] text-[14px]">Not
                             Applied</button>
                         <p class="details text-[#323B49] text-[12px]">Create stunning web experiences for high-profile
                             clients. Must have portfolio and experience with modern web design trends.</p>
@@ -114,14 +123,14 @@
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF]"><i
+                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
                                 class="fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
             </div>
             <!-- card no 3 -->
             <div class="flex justify-between  bg-[#FFFFFF] rounded-[5px] ">
-                <div class="space-y-4 p-5 rounded-[8px]">
+                <div class="space-y-4 p-5 rounded-sm">
                     <div>
                         <p class="cardName  text-[#002C5C] text-[14px] font-bold">DataViz Solutions</p>
                         <p class="designation text-[#323B49] text-[12px]">Data Visualization Specialist</p>
@@ -131,7 +140,7 @@
                     </div>
                     <div>
                         <button
-                            class="notApplied bg-[#EEF4FF] rounded-[5px] w-[100px] h-[35px] text-[#002C5C] text-[14px]">Not
+                            class="notApplied bg-[#EEF4FF] rounded-sm w-[100px] h-[35px] text-[#002C5C] text-[14px]">Not
                             Applied</button>
                         <p class="details text-[#323B49] text-[12px]">Transform complex data into compelling
                             visualizations. Required skills: D3.js, React, and strong analytical thinking.
@@ -146,14 +155,14 @@
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF]"><i
+                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
                                 class="fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
             </div>
             <!-- card no 4 -->
             <div class="flex justify-between  bg-[#FFFFFF] rounded-[5px] ">
-                <div class="space-y-4 p-5 rounded-[8px]">
+                <div class="space-y-4 p-5 rounded-sm">
                     <div>
                         <p class="cardName  text-[#002C5C] text-[14px] font-bold">CloudFirst Inc</p>
                         <p class="designation text-[#323B49] text-[12px]">Backend Developer</p>
@@ -163,7 +172,7 @@
                     </div>
                     <div>
                         <button
-                            class="notApplied bg-[#EEF4FF] rounded-[5px] w-[100px] h-[35px] text-[#002C5C] text-[14px]">Not
+                            class="notApplied bg-[#EEF4FF] rounded-sm w-[100px] h-[35px] text-[#002C5C] text-[14px]">Not
                             Applied</button>
                         <p class="details text-[#323B49] text-[12px]">Design and maintain scalable backend systems using
                             Python and AWS. Work with modern DevOps practices and cloud infrastructure.
@@ -178,14 +187,14 @@
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF]"><i
+                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
                                 class="fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
             </div>
             <!-- card no 5 -->
             <div class="flex justify-between  bg-[#FFFFFF] rounded-[5px] ">
-                <div class="space-y-4 p-5 rounded-[8px]">
+                <div class="space-y-4 p-5 rounded-sm">
                     <div>
                         <p class="cardName  text-[#002C5C] text-[14px] font-bold">Innovation Labs</p>
                         <p class="designation text-[#323B49] text-[12px]">UI/UX Engineer</p>
@@ -195,7 +204,7 @@
                     </div>
                     <div>
                         <button
-                            class="notApplied bg-[#EEF4FF] rounded-[5px] w-[100px] h-[35px] text-[#002C5C] text-[14px]">Not
+                            class="notApplied bg-[#EEF4FF] rounded-sm w-[100px] h-[35px] text-[#002C5C] text-[14px]">Not
                             Applied</button>
                         <p class="details text-[#323B49] text-[12px]">Create beautiful and functional user interfaces
                             for our suite of products. Strong design skills and frontend development expertise required.
@@ -210,14 +219,14 @@
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF]"><i
+                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
                                 class="fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
             </div>
             <!-- card no 6 -->
             <div class="flex justify-between  bg-[#FFFFFF] rounded-[5px] ">
-                <div class="space-y-4 p-5 rounded-[8px]">
+                <div class="space-y-4 p-5 rounded-sm">
                     <div>
                         <p class="cardName  text-[#002C5C] text-[14px] font-bold">MegaCorp Solutions</p>
                         <p class="designation text-[#323B49] text-[12px]">JavaScript Developer</p>
@@ -227,7 +236,7 @@
                     </div>
                     <div>
                         <button
-                            class="notApplied bg-[#EEF4FF] rounded-[5px] w-[100px] h-[35px] text-[#002C5C] text-[14px]">Not
+                            class="notApplied bg-[#EEF4FF] rounded-sm w-[100px] h-[35px] text-[#002C5C] text-[14px]">Not
                             Applied</button>
                         <p class="details text-[#323B49] text-[12px]">Build enterprise applications with JavaScript and
                             modern frameworks. We offer competitive compensation, health insurance, and professional
@@ -243,14 +252,14 @@
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF]"><i
+                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
                                 class="fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
             </div>
             <!-- card no 7 -->
             <div class="flex justify-between  bg-[#FFFFFF] rounded-[5px] ">
-                <div class="space-y-4 p-5 rounded-[8px]">
+                <div class="space-y-4 p-5 rounded-sm">
                     <div>
                         <p class="cardName  text-[#002C5C] text-[14px] font-bold">StartupXYZ</p>
                         <p class="designation text-[#323B49] text-[12px]">Full Stack Engineer</p>
@@ -260,7 +269,7 @@
                     </div>
                     <div>
                         <button
-                            class="notApplied bg-[#EEF4FF] rounded-[5px] w-[100px] h-[35px] text-[#002C5C] text-[14px]">Not
+                            class="notApplied bg-[#EEF4FF] rounded-sm w-[100px] h-[35px] text-[#002C5C] text-[14px]">Not
                             Applied</button>
                         <p class="details text-[#323B49] text-[12px]">Join our fast-growing startup and work on our core
                             platform. Experience with Node.js and React required. Great benefits and equity package
@@ -276,14 +285,14 @@
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF]"><i
+                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
                                 class="fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
             </div>
             <!-- card no 8 -->
             <div class="flex justify-between  bg-[#FFFFFF] rounded-[5px] ">
-                <div class="space-y-4 p-5 rounded-[8px]">
+                <div class="space-y-4 p-5 rounded-sm">
                     <div>
                         <p class="cardName  text-[#002C5C] text-[14px] font-bold">TechCorp Industries</p>
                         <p class="designation text-[#323B49] text-[12px]">Senior Frontend Developer</p>
@@ -294,7 +303,7 @@
                     </div>
                     <div>
                         <button
-                            class="notApplied bg-[#EEF4FF] rounded-[5px] w-[100px] h-[35px] text-[#002C5C] text-[14px]">Not
+                            class="notApplied bg-[#EEF4FF] rounded-sm w-[100px] h-[35px] text-[#002C5C] text-[14px]">Not
                             Applied</button>
                         <p class="details text-[#323B49] text-[12px]">We are looking for an experienced Frontend
                             Developer to build scalable web applications using React and TypeScript. You will work with
@@ -310,16 +319,14 @@
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF]"><i
+                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
                                 class="fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
             </div>
-            
+
         </section>
     </main>
-
-
 
 
     <script src="./Js/javaScript.js"></script>
