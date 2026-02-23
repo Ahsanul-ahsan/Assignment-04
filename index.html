@@ -27,18 +27,18 @@
 
 <body class="bg-[#F8F9FB]">
     <!-- Header section  -->
-    <header class="w-[80%] mx-auto pb-3">
+    <header class="w-[80%] mx-auto pb-3 pt-5 ">
         <h1 class="titile text-[#002C5C] font-bold text-[28px]">Job Application Tracker</h1>
         <div class="grid grid-cols-3 gap-4 ">
-            <div class="bg-[#FFFFFF] rounded-lg w-[320px] h-[75px] p-5 ">
+            <div class="bg-[#FFFFFF] rounded-lg md:w-[320px] h-[75px] p-5 ">
                 <p class="text-[#002C5C] text-[12px]">Total</p>
-                <p id="total" class="text-[#002C5C] font-bold text-[16px]">0</p>
+                <p id="total" class="totalCount text-[#002C5C] font-bold text-[16px]">0</p>
             </div>
-            <div class="bg-[#FFFFFF] rounded-lg  w-[320px] h-[75px] p-5">
+            <div class="bg-[#FFFFFF] rounded-lg  md:w-[320px] h-[75px] p-5">
                 <p class="text-[#002C5C] text-[12px]">Interview</p>
                 <p id="interviewCount" class="text-[#10B981] font-bold text-[16px] ">0</p>
             </div>
-            <div class="bg-[#FFFFFF] rounded-lg  w-[320px] h-[75px] p-5">
+            <div class="bg-[#FFFFFF] rounded-lg  md:w-[320px] h-[75px] p-5">
                 <p class="text-[#002C5C] text-[12px]">Rejected</p>
                 <p id="rejectCount" class="text-red-500 font-bold text-[16px]">0</p>
             </div>
@@ -47,6 +47,19 @@
     <hr style="border: 1px solid #e6e7e9" class="w-[80%] mx-auto">
     <!-- main section  -->
     <main class="w-[80%] mx-auto pt-10">
+        <!-- Available Jobs -->
+        <div class="flex justify-between mb-8">
+            <div>
+                <p class="available-jobs text-[#002C5C] text-[18px] font-bold">Available Jobs</p>
+            </div>
+            <div class="flex gap-1">
+                <p id="jobsCount" class="jobs-count text-[#64748B] text-[15px]">0</p>
+                <div>
+                    <p class="jobs text-[#64748B] text-[15px]">jobs</p>
+                </div>
+            </div>
+        </div>
+
         <!-- filter Button  -->
         <div>
             <button onclick="toggleStyle ('all-filter-btn')" id="all-filter-btn"
@@ -58,13 +71,12 @@
         </div>
         <!-- after filtered card  -->
         <section id="filtered-section" class="hidden">
-
+            
         </section>
-
         <!-- all card section  -->
-        <section id="allcard" class="pt-8 space-y-4">
+        <section id="allcard" class="allCards pt-8 space-y-4">
             <!-- card no 1 -->
-            <div class="flex justify-between  bg-[#FFFFFF] rounded-[5px] ">
+            <div class="flex flex-col md:flex-row justify-between  bg-[#FFFFFF] rounded-[5px] ">
                 <div class="space-y-4 p-5 rounded-sm">
                     <div>
                         <p class="cardName text-[#002C5C] text-[14px] font-bold">Mobile First Corp</p>
@@ -89,15 +101,15 @@
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
-                                class="fa-regular fa-trash-can"></i></button>
+                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] border border-gray-300 m-4"><i
+                                class="delete-btn  fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
 
 
             </div>
             <!-- card no 2 -->
-            <div class="flex justify-between  bg-[#FFFFFF] rounded-[5px] ">
+            <div class="flex flex-col md:flex-row justify-between  bg-[#FFFFFF] rounded-[5px] ">
                 <div class="space-y-4 p-5 rounded-sm">
                     <div>
                         <p class="cardName  text-[#002C5C] text-[14px] font-bold">WebFlow Agency</p>
@@ -123,13 +135,13 @@
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
-                                class="fa-regular fa-trash-can"></i></button>
+                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] border border-gray-300 m-4"><i
+                                class="delete-btn  fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
             </div>
             <!-- card no 3 -->
-            <div class="flex justify-between  bg-[#FFFFFF] rounded-[5px] ">
+            <div class="flex flex-col md:flex-row justify-between  bg-[#FFFFFF] rounded-[5px] ">
                 <div class="space-y-4 p-5 rounded-sm">
                     <div>
                         <p class="cardName  text-[#002C5C] text-[14px] font-bold">DataViz Solutions</p>
@@ -155,13 +167,13 @@
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
-                                class="fa-regular fa-trash-can"></i></button>
+                        <button  class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] border border-gray-300 m-4"><i
+                                class="delete-btn  fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
             </div>
             <!-- card no 4 -->
-            <div class="flex justify-between  bg-[#FFFFFF] rounded-[5px] ">
+            <div class="flex flex-col md:flex-row justify-between  bg-[#FFFFFF] rounded-[5px] ">
                 <div class="space-y-4 p-5 rounded-sm">
                     <div>
                         <p class="cardName  text-[#002C5C] text-[14px] font-bold">CloudFirst Inc</p>
@@ -187,13 +199,13 @@
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
-                                class="fa-regular fa-trash-can"></i></button>
+                        <button  class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] border border-gray-300 m-4"><i
+                                class="delete-btn  fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
             </div>
             <!-- card no 5 -->
-            <div class="flex justify-between  bg-[#FFFFFF] rounded-[5px] ">
+            <div class="flex flex-col md:flex-row justify-between  bg-[#FFFFFF] rounded-[5px] ">
                 <div class="space-y-4 p-5 rounded-sm">
                     <div>
                         <p class="cardName  text-[#002C5C] text-[14px] font-bold">Innovation Labs</p>
@@ -219,13 +231,13 @@
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
-                                class="fa-regular fa-trash-can"></i></button>
+                        <button  class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] border border-gray-300 m-4"><i
+                                class="delete-btn  fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
             </div>
             <!-- card no 6 -->
-            <div class="flex justify-between  bg-[#FFFFFF] rounded-[5px] ">
+            <div class="flex flex-col md:flex-row justify-between  bg-[#FFFFFF] rounded-[5px] ">
                 <div class="space-y-4 p-5 rounded-sm">
                     <div>
                         <p class="cardName  text-[#002C5C] text-[14px] font-bold">MegaCorp Solutions</p>
@@ -252,13 +264,13 @@
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
-                                class="fa-regular fa-trash-can"></i></button>
+                        <button  class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] border border-gray-300 m-4"><i
+                                class="delete-btn  fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
             </div>
             <!-- card no 7 -->
-            <div class="flex justify-between  bg-[#FFFFFF] rounded-[5px] ">
+            <div class="flex flex-col md:flex-row justify-between  bg-[#FFFFFF] rounded-[5px] ">
                 <div class="space-y-4 p-5 rounded-sm">
                     <div>
                         <p class="cardName  text-[#002C5C] text-[14px] font-bold">StartupXYZ</p>
@@ -285,13 +297,13 @@
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
-                                class="fa-regular fa-trash-can"></i></button>
+                        <button  class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] border border-gray-300 m-4"><i
+                                class="delete-btn  fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
             </div>
             <!-- card no 8 -->
-            <div class="flex justify-between  bg-[#FFFFFF] rounded-[5px] ">
+            <div class="flex flex-col md:flex-row justify-between  bg-[#FFFFFF] rounded-[5px] ">
                 <div class="space-y-4 p-5 rounded-sm">
                     <div>
                         <p class="cardName  text-[#002C5C] text-[14px] font-bold">TechCorp Industries</p>
@@ -319,17 +331,15 @@
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
-                                class="fa-regular fa-trash-can"></i></button>
+                        <button  class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] border border-gray-300 m-4"><i
+                                class="delete-btn  fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
             </div>
-
         </section>
     </main>
-
-
     <script src="./Js/javaScript.js"></script>
 </body>
-
 </html>
+
+ 

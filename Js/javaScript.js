@@ -1,3 +1,4 @@
+
 let interviewList = [];
 let rejectedList = [];
 let currentStatus = 'all';
@@ -5,6 +6,7 @@ let currentStatus = 'all';
 let total = document.getElementById('total');
 let interviewCount = document.getElementById('interviewCount');
 let rejectCount = document.getElementById('rejectCount');
+let jobsCount = document.getElementById('jobsCount');
 
 const allFilterBtn = document.getElementById('all-filter-btn');
 const interviewFilterBtn = document.getElementById('interview-filter-btn');
@@ -14,15 +16,17 @@ const allCard = document.getElementById('allcard');
 const mainContanier = document.querySelector('main');
 const filterSection = document.getElementById('filtered-section');
 
-
+// functions calculateCount 
 function calculateCount() {
     total.innerText = allCard.children.length
     interviewCount.innerText = interviewList.length
     rejectCount.innerText = rejectedList.length
+    jobsCount.innerText = allCard.children.length
 
 }
 calculateCount();
 
+// function for id color add & color remove 
 function toggleStyle(id) {
     allFilterBtn.classList.remove('bg-blue-700', 'text-white');
     interviewFilterBtn.classList.remove('bg-blue-700', 'text-white');
@@ -52,6 +56,8 @@ function toggleStyle(id) {
     }
 }
 
+
+// function for mainContanier 
 mainContanier.addEventListener('click', function (event) {
     if (event.target.classList.contains('interview')) {
         const parenNode = event.target.parentNode.parentNode
@@ -62,7 +68,6 @@ mainContanier.addEventListener('click', function (event) {
         const details = parenNode.querySelector('.details').innerText
         parenNode.querySelector('.notApplied').innerText = 'interview'
         parenNode.querySelector('.notApplied').className = 'bg-green-500 rounded-sm w-[100px] h-[35px] text-white text-[14px] font-bold'
-
 
         const cardInfo = {
             cardName,
@@ -92,7 +97,6 @@ mainContanier.addEventListener('click', function (event) {
         parenNode.querySelector('.notApplied').innerText = 'Rejected'
         parenNode.querySelector('.notApplied').className = 'bg-red-500 rounded-sm w-[100px] h-[35px] text-white text-[14px] font-bold'
 
-
         const cardInfo = {
             cardName,
             designation,
@@ -112,13 +116,47 @@ mainContanier.addEventListener('click', function (event) {
         }
 
         calculateCount();
-
     }
+   
+
+    else if(event.target.classList.contains('delete-btn')){
+
+    const parenNode = event.target.closest('.flex'); 
+    const cardName = parenNode.querySelector('.cardName').innerText;
+
+    interviewList = interviewList.filter(item => item.cardName != cardName)
+    rejectedList = rejectedList.filter(item => item.cardName != cardName)
+
+    parenNode.remove();
+
+    calculateCount();
+
+    if(!filterSection.classList.contains('hidden')){
+        if(interviewFilterBtn.classList.contains('bg-blue-700')){
+            renderInterview();
+        }
+        if(rejectedFilterBtn.classList.contains('bg-blue-700')){
+            renderRejected();
+        }
+    }
+}
+    
+
 
 })
 
+//  function for interview button 
 function renderInterview() {
     filterSection.innerHTML = ''
+    if (interviewList.length === 0) {
+        filterSection.innerHTML = `<div class="text-center bg-white p-10">
+        <img src="./Js/image/image.png" class="mx-auto mb-4 w-16"/>
+        <p class="text-2xl font-bold text-[#002C5C]">No jobs available</p>
+        <p class="text-gray-500">Check back soon for new job opportunities</p>
+      </div>`;
+        return;
+    }
+
     for (let interview of interviewList) {
         console.log(interview)
         let div = document.createElement('div');
@@ -146,8 +184,8 @@ function renderInterview() {
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
-                                class="fa-regular fa-trash-can"></i></button>
+                        <button  class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] border border-gray-300 m-4"><i
+                                class="delete-btn  fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
         
@@ -156,8 +194,18 @@ function renderInterview() {
 
     }
 }
+
+// function for rejected button 
 function renderRejected() {
     filterSection.innerHTML = ''
+     if (rejectedList.length === 0) {
+        filterSection.innerHTML = `<div class="text-center bg-white p-10">
+        <img src="./Js/image/image.png" class="mx-auto mb-4 w-16"/>
+        <p class="text-2xl font-bold text-[#002C5C]">No jobs available</p>
+        <p class="text-gray-500">Check back soon for new job opportunities</p>
+      </div>`;
+        return;
+    }
     for (let reject of rejectedList) {
         console.log(reject)
         let div = document.createElement('div');
@@ -185,8 +233,8 @@ function renderRejected() {
                 </div>
                 <div>
                     <div>
-                        <button class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] py-5 pr-8"><i
-                                class="fa-regular fa-trash-can"></i></button>
+                        <button  class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] border border-gray-300 m-4"><i
+                                class="delete-btn  fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
         
@@ -195,3 +243,5 @@ function renderRejected() {
 
     }
 }
+
+
