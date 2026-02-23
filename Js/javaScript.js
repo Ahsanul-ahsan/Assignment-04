@@ -160,7 +160,7 @@ function renderInterview() {
     for (let interview of interviewList) {
         console.log(interview)
         let div = document.createElement('div');
-        div.className = 'flex justify-between  bg-[#FFFFFF] rounded-[5px] '
+        div.className = 'flex flex-col md:flex-row justify-between  bg-[#FFFFFF] rounded-[5px] '
         div.innerHTML = `
         <div class="space-y-4 p-5 rounded-sm">
                     <div>
@@ -177,14 +177,14 @@ function renderInterview() {
                     </div>
                     <div>
                         <button
-                            class="interview border-1 border-green-500 w-[82px] h-[30px] text-[green] rounded-[5px] text-[14px]">interview</button>
+                            class="interview border-1 border-green-500 w-[82px] h-[30px] text-[green] rounded-[5px] text-[14px] cursor-pointer">interview</button>
                         <button
-                            class="rejected border-1 border-red-500 w-[82px] h-[30px] text-[red] rounded-[5px] text-[14px]">Rejected</button>
+                            class="rejected border-1 border-red-500 w-[82px] h-[30px] text-[red] rounded-[5px] text-[14px] cursor-pointer">Rejected</button>
                     </div>
                 </div>
                 <div>
                     <div>
-                        <button  class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] border border-gray-300 m-4"><i
+                        <button  class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-red-500 md:bg-[#FFFFFF]   border border-gray-300 m-4"><i
                                 class="delete-btn  fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
@@ -209,7 +209,7 @@ function renderRejected() {
     for (let reject of rejectedList) {
         console.log(reject)
         let div = document.createElement('div');
-        div.className = 'flex justify-between  bg-[#FFFFFF] rounded-[5px] '
+        div.className = 'flex flex-col md:flex-row justify-between  bg-[#FFFFFF] rounded-[5px] '
         div.innerHTML = `
         <div class="space-y-4 p-5 rounded-sm">
                     <div>
@@ -226,14 +226,14 @@ function renderRejected() {
                     </div>
                     <div>
                         <button
-                            class="interview border-1 border-green-500 w-[82px] h-[30px] text-[green] rounded-[5px] text-[14px]">interview</button>
+                            class="interview border-1 border-green-500 w-[82px] h-[30px] text-[green] rounded-[5px] text-[14px] cursor-pointer">interview</button>
                         <button
-                            class="rejected border-1 border-red-500 w-[82px] h-[30px] text-[red] rounded-[5px] text-[14px]">Rejected</button>
+                            class="rejected border-1 border-red-500 w-[82px] h-[30px] text-[red] rounded-[5px] text-[14px] cursor-pointer">Rejected</button>
                     </div>
                 </div>
                 <div>
                     <div>
-                        <button  class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-[#FFFFFF] border border-gray-300 m-4"><i
+                        <button  class="delete-btn w-[30px] h-[30px] rounded-[50%] bg-red-500 md:bg-[#FFFFFF]   border border-gray-300 m-4"><i
                                 class="delete-btn  fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
