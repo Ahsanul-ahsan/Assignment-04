@@ -130,6 +130,7 @@ mainContanier.addEventListener('click', function (event) {
     parenNode.remove();
 
     calculateCount();
+    checkEmptyAll()
 
     if(!filterSection.classList.contains('hidden')){
         if(interviewFilterBtn.classList.contains('bg-blue-700')){
@@ -140,8 +141,6 @@ mainContanier.addEventListener('click', function (event) {
         }
     }
 }
-    
-
 
 })
 
@@ -164,7 +163,7 @@ function renderInterview() {
         div.innerHTML = `
         <div class="space-y-4 p-5 rounded-sm">
                     <div>
-                        <p class="cardName text-[#002C5C] text-[14px] font-bold">${interview.cardName}</p>
+                        <p class="cardName text-[#002C5C] text-[16px] font-bold">${interview.cardName}</p>
                         <p class="designation text-[#323B49] text-[12px]">${interview.designation}</p>
                     </div>
                     <div>
@@ -213,7 +212,7 @@ function renderRejected() {
         div.innerHTML = `
         <div class="space-y-4 p-5 rounded-sm">
                     <div>
-                        <p class="cardName text-[#002C5C] text-[14px] font-bold">${reject.cardName}</p>
+                        <p class="cardName text-[#002C5C] text-[16px] font-bold">${reject.cardName}</p>
                         <p class="designation text-[#323B49] text-[12px]">${reject.designation}</p>
                     </div>
                     <div>
@@ -244,4 +243,14 @@ function renderRejected() {
     }
 }
 
-
+// for button filter ematy show no jobs 
+function checkEmptyAll() {
+    if (allCard.children.length === 0) {
+        allCard.innerHTML = `
+        <div class="text-center bg-white p-10">
+        <img src="./Js/image/image.png" class="mx-auto mb-4 w-16"/>
+        <p class="text-2xl font-bold text-[#002C5C]">No jobs available</p>
+        <p class="text-gray-500">Check back soon for new job opportunities</p>
+      </div>`;
+    }
+}
